@@ -4,8 +4,8 @@
 ## 免流网站（畅游云免流）
 
  1. 官站：
- 2. 备用：[vpn365.github.io](https://vpn365.github.io)
- 3. 免流技术：
+ 2. 备用站：[vpn365.github.io](https://vpn365.github.io)
+ 3. 免流技术站：
 
 ## 免流机场
 
