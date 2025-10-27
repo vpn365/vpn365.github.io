@@ -1,0 +1,474 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* 头部样式 */
+.app-header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+}
+
+.app-title {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.app-tagline {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+/* 主要内容区 */
+.app-container {
+    margin-bottom: 40px;
+}
+
+.app-content {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 12px;
+    /* 去掉裁剪，避免图片/阴影被隐藏 */
+    overflow: visible;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 32px;
+    /* 调整：使图标顶部与详情顶部对齐（与应用名称高度对齐） */
+    align-items: flex-start;
+}
+
+/* 应用图标容器：移除顶部/底部 padding，使图片顶部与详情顶部对齐 */
+.app-image {
+    flex: 0 0 auto;
+    padding: 35px 35px; /* 增加顶部padding实现下移 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 应用图标：高度固定以与详情对齐，宽度自适应，不裁剪图片内容，保持完整显示 */
+.app-icon {
+    width: auto;
+    height: 220px;
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    object-fit: contain;
+    object-position: center top;
+    display: block;
+    background-color: #fff;
+    /* 在桌面上允许图片自然宽度，但在小屏幕仍有最大限制 */
+    max-width: none;
+    max-height: 100%;
+}
+
+/* 应用详情 */
+.app-details {
+    flex: 1;
+    min-width: 300px;
+    padding: 24px;
+}
+
+.app-name {
+    font-size: 26px;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.app-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #f39c12;
+}
+
+.rating-value {
+    margin-left: 8px;
+    font-weight: 500;
+    color: #34495e;
+}
+
+.rating-count {
+    margin-left: 6px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.app-publisher {
+    color: #3498db;
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+.app-info {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.app-info p {
+    margin-bottom: 6px;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* 下载按钮区域 */
+.download-buttons-container {
+    margin-top: 16px;
+}
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.platform-download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.platform-download-btn i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.platform-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.platform-download-btn:active {
+    transform: translateY(0);
+}
+
+/* 下载按钮文本 */
+.download-label {
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+/* 平台按钮样式 */
+.android-btn {
+    background-color: #3ddc84;
+}
+
+.ios-btn {
+    background-color: #000;
+}
+
+.windows-btn {
+    background-color: #0078d7;
+}
+
+.macos-btn {
+    background-color: #5856d6;
+}
+
+.linux-btn {
+    background-color: #ff9500;
+}
+
+.download-note {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* 应用介绍区域 */
+.app-description-section {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+}
+
+.app-description-section h3 {
+    font-size: 20px;
+    margin: 20px 0 12px;
+    color: #2c3e50;
+}
+
+.app-description-section h3:first-child {
+    margin-top: 0;
+}
+
+.app-description {
+    color: #34495e;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li i {
+    color: #3498db;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* 区域切换按钮 */
+.section-toggle {
+    text-align: center;
+    margin: -12px 0 20px;
+}
+
+.toggle-button {
+    background-color: transparent;
+    color: #3498db;
+    border: 1px solid #3498db;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.toggle-button i {
+    margin-right: 6px;
+}
+
+.toggle-button:hover {
+    background-color: #f0f7ff;
+}
+
+/* 应用区块通用样式 */
+.app-section {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+}
+
+.app-section h3 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #2c3e50;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+/* 区块标题：左侧标题、右侧切换按钮 */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* 当标题行中的 h3 使用原有样式的同时，去掉额外的内边距 */
+.section-header h3 {
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+/* 较小的内联切换按钮（用于标题右侧） */
+.toggle-button.toggle-inline {
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 16px;
+}
+
+/* 优化截图居中显示 */
+.screenshot-grid {
+    display: grid;
+    /* 更灵活的列布局：根据可用宽度自动适配列数 */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    justify-items: center;
+    align-items: center;
+    padding: 8px 12px; /* 容器内边距，防止图片紧贴边缘 */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 图片在单元格内居中显示并保持合理左右宽度 */
+.screenshot-item {
+    display: block;
+    width: 100%;
+    max-width: 320px; /* 限制单张截图左右宽度 */
+    height: auto;     /* 保持原始宽高比，自适应高度 */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    object-fit: cover; /* cover 让画面填充单元格，保持视觉一致，可改为 contain 以完整显示原图 */
+    object-position: center center;
+    background-color: #f9f9f9;
+    padding: 6px; /* 内部留白，防止图片边缘被遮挡 */
+}
+
+/* 使 hover 效果在保持比例的同时不破坏布局 */
+.screenshot-item:hover {
+    transform: scale(1.03);
+}
+
+/* 评价区域 */
+.review-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.review-item {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.reviewer-name {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.review-rating {
+    color: #f39c12;
+}
+
+.review-content {
+    color: #34495e;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 页脚样式 */
+.app-footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 24px 0;
+    font-size: 14px;
+}
+
+.disclaimer {
+    color: #bdc3c7;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .app-content {
+        flex-direction: column;
+    }
+    
+    /* 调整应用图标容器和图标样式 */
+.app-image {
+    flex: 0 0 auto;
+    padding: 24px; /* 统一四周的padding */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 改为居中对齐 */
+}
+
+.app-icon {
+    width: auto;
+    height: 220px;
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    object-fit: contain;
+    object-position: center; /* 简化为居中对齐 */
+    display: block;
+    background-color: #fff;
+    max-width: none;
+    max-height: 100%;
+}
+    
+    .download-buttons {
+        gap: 10px;
+    }
+    
+    .platform-download-btn {
+        padding: 10px 16px;
+        font-size: 15px;
+    }
+    
+    .platform-download-btn i {
+        font-size: 20px;
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 24px;
+    }
+    
+    .app-name {
+        font-size: 22px;
+    }
+    
+    .download-buttons {
+        flex-direction: column;
+    }
+    
+    .platform-download-btn {
+        width: 100%;
+    }
+    
+    .screenshot-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .review-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* 手机端进一步缩小图标，保持完整显示 */
+    .app-icon {
+        width: auto;
+        height: 150px;
+        object-fit: contain;
+        object-position: center;
+        max-width: 100%;
+    }
+}

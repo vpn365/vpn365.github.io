@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务器监控仪表盘</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/pagemain.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">服务器监控中心</div>
+            <div class="status-indicator">
+                <span class="indicator status-online" id="global-status"></span>
+                <span id="status-text">所有服务器正常运行</span>
+                <span class="tooltip">
+                    <span class="loading" id="refresh-indicator" style="display: none;"></span>
+                    <span class="tooltip-text">正在刷新数据...</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="dashboard-grid">
+            <!-- CPU 使用率 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">CPU 使用率</div>
+                    <div class="card-icon icon-primary">
+                        <i class="fa fa-microchip"></i>
+                    </div>
+                </div>
+                <div class="card-value" id="cpu-usage">32%</div>
+                <div class="progress-bar">
+                    <div class="progress-fill progress-primary" id="cpu-progress" style="width: 32%"></div>
+                </div>
+                <div class="card-trend trend-up" id="cpu-trend">
+                    <i class="fa fa-arrow-up"></i>
+                    较昨日上升 2.5%
+                </div>
+            </div>
+
+            <!-- 内存使用率 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">内存使用率</div>
+                    <div class="card-icon icon-secondary">
+                        <i class="fa fa-memory"></i>
+                    </div>
+                </div>
+                <div class="card-value" id="memory-usage">68%</div>
+                <div class="progress-bar">
+                    <div class="progress-fill progress-secondary" id="memory-progress" style="width: 68%"></div>
+                </div>
+                <div class="card-trend trend-up" id="memory-trend">
+                    <i class="fa fa-arrow-up"></i>
+                    较昨日上升 5.2%
+                </div>
+            </div>
+
+            <!-- 磁盘使用率 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">磁盘使用率</div>
+                    <div class="card-icon icon-warning">
+                        <i class="fa fa-hdd-o"></i>
+                    </div>
+                </div>
+                <div class="card-value" id="disk-usage">82%</div>
+                <div class="progress-bar">
+                    <div class="progress-fill progress-warning" id="disk-progress" style="width: 82%"></div>
+                </div>
+                <div class="card-trend trend-up" id="disk-trend">
+                    <i class="fa fa-arrow-up"></i>
+                    较昨日上升 1.8%
+                </div>
+            </div>
+
+            <!-- 网络流量 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">网络流量</div>
+                    <div class="card-icon icon-primary">
+                        <i class="fa fa-exchange"></i>
+                    </div>
+                </div>
+                <div class="card-value" id="network-traffic">1.2 Gbps</div>
+                <div class="chart-container">
+                    <canvas id="network-chart"></canvas>
+                </div>
+                <div class="card-trend trend-down" id="network-trend">
+                    <i class="fa fa-arrow-down"></i>
+                    较昨日下降 0.3 Gbps
+                </div>
+            </div>
+
+            <!-- 在线用户 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">在线用户</div>
+                    <div class="card-icon icon-secondary">
+                        <i class="fa fa-users"></i>
+                    </div>
+                </div>
+                <div class="card-value" id="online-users">1,248</div>
+                <div class="chart-container">
+                    <canvas id="users-chart"></canvas>
+                </div>
+                <div class="card-trend trend-up" id="users-trend">
+                    <i class="fa fa-arrow-up"></i>
+                    较昨日上升 124 人
+                </div>
+            </div>
+
+            <!-- 响应时间 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">平均响应时间</div>
+                    <div class="card-icon icon-primary">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                </div>
+                <div class="card-value" id="response-time">128 ms</div>
+                <div class="progress-bar">
+                    <div class="progress-fill progress-primary" id="response-progress" style="width: 25%"></div>
+                </div>
+                <div class="card-trend trend-down" id="response-trend">
+                    <i class="fa fa-arrow-down"></i>
+                    较昨日下降 12 ms
+                </div>
+            </div>
+
+            <!-- 服务器列表 -->
+            <div class="card full-width">
+                <div class="card-header">
+                    <div class="card-title">服务器列表</div>
+                    <div class="card-icon icon-primary">
+                        <i class="fa fa-server"></i>
+                    </div>
+                </div>
+                <div class="servers-list" id="servers-list">
+                    <!-- 服务器列表将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+        <p>服务器监控仪表盘·最后更新: <span id="last-updated">加载中...</span></p>
+    </footer>
+
+    <script src="js/pagemain.js"></script>
+</body>
+</html>

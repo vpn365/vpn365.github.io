@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>畅游云免流·更新日志</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 5%;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 60px; /* 减少左侧间距 */
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 30px; /* 调整垂线位置 */
+            width: 2px;
+            background-color: #1a73e8;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: relative;
+            transition: transform 0.2s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(2px);
+        }
+
+        .year {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a73e8;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #202124;
+            margin-bottom: 4px;
+        }
+
+        .description {
+            color: #5f6368;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container {
+                padding-left: 3%;
+            }
+            .timeline {
+                padding-left: 35px;
+            }
+            .timeline::before {
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline-container">
+        <h3 style="text-align: center; margin-bottom: 30px; color: #202124;">畅游云免流·发展历程和更新日志</h3>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="year">2013-2014</div>
+                <div class="title">本地免流</div>
+                <div class="description">入门和使用，本地免流</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2015</div>
+                <div class="title">云免</div>
+                <div class="description">腾讯云服务器，搭建云免流，采用康师傅流控；小范围测试</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2015.03-09</div>
+                <div class="title">畅游云免流</div>
+                <div class="description">正式开始；完善规划：网页、云免套餐、线路、说明书、QQ群、代理、</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2016</div>
+                <div class="title">热点共享</div>
+                <div class="description">WIFI热点开放；支持：苹果、安卓、电脑；领先同行</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2016-2017</div>
+                <div class="title">服务升级</div>
+                <div class="description">流控变更，服务器带宽升级；优化线路，优化交互体验；推出包年无限，同期，推荐大功率中继，智能路由器</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2018-2023</div>
+                <div class="title">技术迭代</div>
+                <div class="description">多种因素；市场和用户需求，逐不同；免流渐小众，期间Q群暂停</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="year">2023-现今</div>
+                <div class="title">大流量卡</div>
+                <div class="description">推出公告，结清用户款项，相关服务停滞；推出5G大流量卡，月享200-500G；更新整理，公开：技术文档、资源文件</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
