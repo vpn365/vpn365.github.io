@@ -848,3 +848,78 @@ body {
     font-size: 0.9rem;
     color: #333;
 }
+
+/* 移动端导航折叠样式 */
+@media (max-width: 900px) {
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-nav {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 180px;
+        background: #fff;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        border-radius: 0 0 0 8px;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1001;
+    }
+    .main-nav.active {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+        transition: max-height 0.3s, opacity 0.2s;
+    }
+    .main-nav ul {
+        padding: 10px 0;
+    }
+    .main-nav li {
+        border-bottom: 1px solid #eee;
+        text-align: right;
+        padding: 0 18px;
+    }
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
+    .main-nav a {
+        display: block;
+        padding: 14px 0;
+        color: #2c3e50;
+    }
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 18px;
+        right: 24px;
+        z-index: 1100;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #2c3e50;
+        cursor: pointer;
+    }
+    .header .container {
+        position: relative;
+    }
+}
+
+/* 桌面端显示导航，隐藏折叠按钮 */
+@media (min-width: 901px) {
+    .main-nav {
+        position: static;
+        max-height: none !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        background: none;
+        box-shadow: none;
+    }
+    .menu-toggle {
+        display: none !important;
+    }
+}

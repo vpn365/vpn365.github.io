@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 点击导航链接关闭菜单（移动端）
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            if (window.innerWidth <= 768 && mainNav) {
+            if (window.innerWidth <= 900 && mainNav) {
                 mainNav.classList.remove('active');
             }
         });
