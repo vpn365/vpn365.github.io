@@ -7,6 +7,12 @@
  2. 备用：[vpn365.github.io](https://vpn365.github.io)
  3. 免流技术：
 
+## 大流量卡（亲测；真实可信）
+
+1. 支持esim手机
+2. 可选：联通、移动、电信、广电
+3. 办理地址（最新）：https://h5.lot-ml.com/ProductEn/Index/2d52273e3f038d26
+
 ## 免流机场
 
 ## 免流简介
